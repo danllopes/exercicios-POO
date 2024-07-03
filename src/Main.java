@@ -1,5 +1,6 @@
 import entities.Employee;
 import entities.Rectangle;
+import entities.Student;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -58,7 +59,7 @@ public class Main {
 
             case 2:
 
-                System.out.println("Exercicio 01\n" +
+                System.out.println("Exercicio 02\n" +
                                    "------------");
 
 
@@ -90,6 +91,40 @@ public class Main {
                 break;
 
             case 3:
+
+                System.out.println("Exercicio 03\n" +
+                        "------------");
+
+
+                System.out.println("""
+                        
+                        Enter the student's information
+                        --------------------------------""");
+
+                var student = new Student();
+
+                System.out.print("\nName: ");
+                sc.nextLine();
+                student.name = sc.nextLine();
+
+                System.out.print("\nPrimeiro Trimestre: ");
+                student.grade1 = sc.nextDouble();
+
+                System.out.print("Segundo Trimestre: ");
+                student.grade2 = sc.nextDouble();
+
+                System.out.print("Terceiro Trimestre: ");
+                student.grade3 = sc.nextDouble();
+
+                System.out.println(student);
+
+                if (student.sumTrimesters() < 60) {
+                    System.out.printf("FAILED\n" +
+                                       "MISSING %.2f POINTS", student.missingPoints());
+                } else {
+                    System.out.print("PASS");
+                }
+
                 break;
 
             default:
