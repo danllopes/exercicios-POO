@@ -1,3 +1,4 @@
+import entities.Employee;
 import entities.Rectangle;
 
 import java.util.Locale;
@@ -56,6 +57,36 @@ public class Main {
                 break;
 
             case 2:
+
+                System.out.println("Exercicio 01\n" +
+                                   "------------");
+
+
+                System.out.println("""
+                        
+                        Enter the employee's information
+                        --------------------------------""");
+
+                var employee = new Employee();
+
+
+                System.out.print("\nName: ");
+                sc.nextLine();
+                employee.name = sc.nextLine();
+
+                System.out.print("Gross salary: ");
+                employee.grossSalary = sc.nextDouble();
+
+                System.out.print("Tax: ");
+                employee.tax = sc.nextDouble();
+
+                System.out.println("\nEmployee: " + employee);
+
+                System.out.print("Which percentage to increase salary? ");
+                employee.increaseSalary(sc.nextDouble());
+
+                System.out.println("\nUpdated data: " + employee);
+
                 break;
 
             case 3:
